@@ -39,7 +39,9 @@ class Board
       elsif current_player_name == name2 && next_pos == 6
         next_pos = 7 
       end 
-      self.cups[next_pos % 14] << self.cups[start_pos].pop 
+
+      next_pos %= 14
+      self.cups[next_pos] << self.cups[start_pos].pop 
       next_pos += 1
     end 
 
@@ -56,8 +58,7 @@ class Board
   end
 
   def next_turn(ending_cup_idx)
-    #debugger
-    if self.cups[ending_cup_idx].count == 1
+    if self.cups[ending_cup_idx].count == 1 
       :switch 
     else  
       ending_cup_idx
