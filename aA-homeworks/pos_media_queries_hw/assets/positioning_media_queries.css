@@ -3,7 +3,22 @@ body {
   background-color: #FEFFF1;
 }
 
+
 @media (min-width: 800px) {
+
+
+.hamburger-dropdown {
+  display: none;
+}
+
+.hamburger-dropdown {
+  display: block;
+}
+
+.hamburger-dropdown li {
+  background-image: url("hamburger.png");
+  background-size: 50px 50px;
+}
 
 h1 {
   font-size: 38px;
