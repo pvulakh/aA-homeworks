@@ -54,3 +54,40 @@ function isPrime(num) {
 
    return sum;
  }
+
+ let printCallback = function(arr) {
+   arr.forEach( (el => console.log(el)) );
+ };
+
+ let titleize = function(nameArr, callback) {
+  let result = nameArr.map((el) => {
+    return `Mx. ${el} Jingleheimer Schmidt`;
+  });
+  return callback(result);
+ };
+
+ class Elephant {
+   constructor(name, height, tricksArr) {
+     this.name = name;
+     this.height = parseInt(height);
+     this.tricksArr = tricksArr;
+   }
+
+   trumpet() {
+     console.log(`${this.name} the elephant goes phrRRRRR!!!`);
+   }
+
+   grow() {
+     this.height += 12;
+   }
+
+   addTrick(trick) {
+     this.tricksArr.push(trick);
+   }
+
+   play() {
+     let randIdx = Math.floor(Math.random() * this.tricksArr.length);
+     let randTrick = this.tricksArr[randIdx];
+     console.log(`${this.name} is ${randTrick}`);
+   }
+ }
