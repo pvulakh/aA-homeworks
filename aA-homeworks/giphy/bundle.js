@@ -90,54 +90,35 @@
 /*!**********************************!*\
   !*** ./actions/giphy_actions.js ***!
   \**********************************/
-/*! exports provided: RECEIVE_SEARCH_GIPHYS, receiveSearchGphys */
+/*! exports provided: RECEIVE_SEARCH_GIPHYS, REQUEST_SEARCH_GIPHYS, receiveSearchGiphys, fetchSearchGiphys */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_SEARCH_GIPHYS", function() { return RECEIVE_SEARCH_GIPHYS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveSearchGphys", function() { return receiveSearchGphys; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REQUEST_SEARCH_GIPHYS", function() { return REQUEST_SEARCH_GIPHYS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveSearchGiphys", function() { return receiveSearchGiphys; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchSearchGiphys", function() { return fetchSearchGiphys; });
 /* harmony import */ var _util_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/api_util */ "./util/api_util.js");
 /* harmony import */ var vm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vm */ "./node_modules/vm-browserify/index.js");
 /* harmony import */ var vm__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vm__WEBPACK_IMPORTED_MODULE_1__);
 
 
 var RECEIVE_SEARCH_GIPHYS = 'RECEIVE_SEARCH_GIPHYS';
-var receiveSearchGphys = function receiveSearchGphys(giphys) {
+var REQUEST_SEARCH_GIPHYS = 'REQUEST_SEARCH_GIPHYS';
+var receiveSearchGiphys = function receiveSearchGiphys(giphys) {
   return {
     type: RECEIVE_SEARCH_GIPHYS,
     giphys: giphys
   };
 };
-
-/***/ }),
-
-/***/ "./components/giphys_index.jsx":
-/*!*************************************!*\
-  !*** ./components/giphys_index.jsx ***!
-  \*************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/react.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _giphys_index_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./giphys_index_item */ "./components/giphys_index_item.jsx");
-/* harmony import */ var _giphys_index_item__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_giphys_index_item__WEBPACK_IMPORTED_MODULE_1__);
-
-
-
-/***/ }),
-
-/***/ "./components/giphys_index_item.jsx":
-/*!******************************************!*\
-  !*** ./components/giphys_index_item.jsx ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
+var fetchSearchGiphys = function fetchSearchGiphys(searchTerm) {
+  return function (dispatch) {
+    _util_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchSearchGiphys"](searchTerm).then(function (giphys) {
+      return dispatch(receiveSearchGiphys(giphys.data));
+    });
+  };
+};
 
 /***/ }),
 
@@ -145,16 +126,10 @@ __webpack_require__.r(__webpack_exports__);
 /*!**************************************!*\
   !*** ./components/giphys_search.jsx ***!
   \**************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! exports provided: default */
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/react.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _giphys_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./giphys_index */ "./components/giphys_index.jsx");
-
-
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/polinavulakh/Documents/AA/aA-homeworks/giphy/components/giphys_search.jsx: Unexpected token (18:6)\n\n\u001b[0m \u001b[90m 16 | \u001b[39m  render() {\u001b[0m\n\u001b[0m \u001b[90m 17 | \u001b[39m    \u001b[36mreturn\u001b[39m {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 18 | \u001b[39m      \u001b[33m<\u001b[39m\u001b[33mform\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 19 | \u001b[39m      \u001b[0m\n\u001b[0m \u001b[90m 20 | \u001b[39m        \u001b[33m<\u001b[39m\u001b[33minput\u001b[39m type\u001b[33m=\u001b[39m\u001b[32m\"submit\"\u001b[39m value\u001b[33m=\u001b[39m\u001b[32m\"Search\"\u001b[39m onSubmit\u001b[33m=\u001b[39m{\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mhandleSubmit}\u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 21 | \u001b[39m      \u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mform\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n    at _class.raise (/Users/polinavulakh/Documents/AA/aA-homeworks/giphy/node_modules/@babel/parser/lib/index.js:3939:15)\n    at _class.unexpected (/Users/polinavulakh/Documents/AA/aA-homeworks/giphy/node_modules/@babel/parser/lib/index.js:5248:16)\n    at _class.parseIdentifierName (/Users/polinavulakh/Documents/AA/aA-homeworks/giphy/node_modules/@babel/parser/lib/index.js:7029:18)\n    at _class.parseIdentifier (/Users/polinavulakh/Documents/AA/aA-homeworks/giphy/node_modules/@babel/parser/lib/index.js:7011:21)\n    at _class.parseMaybePrivateName (/Users/polinavulakh/Documents/AA/aA-homeworks/giphy/node_modules/@babel/parser/lib/index.js:6359:19)\n    at _class.parsePropertyName (/Users/polinavulakh/Documents/AA/aA-homeworks/giphy/node_modules/@babel/parser/lib/index.js:6836:98)\n    at _class.parseObj (/Users/polinavulakh/Documents/AA/aA-homeworks/giphy/node_modules/@babel/parser/lib/index.js:6731:14)\n    at _class.parseExprAtom (/Users/polinavulakh/Documents/AA/aA-homeworks/giphy/node_modules/@babel/parser/lib/index.js:6294:21)\n    at _class.parseExprAtom (/Users/polinavulakh/Documents/AA/aA-homeworks/giphy/node_modules/@babel/parser/lib/index.js:3635:52)\n    at _class.parseExprSubscripts (/Users/polinavulakh/Documents/AA/aA-homeworks/giphy/node_modules/@babel/parser/lib/index.js:5924:21)\n    at _class.parseMaybeUnary (/Users/polinavulakh/Documents/AA/aA-homeworks/giphy/node_modules/@babel/parser/lib/index.js:5903:21)\n    at _class.parseExprOps (/Users/polinavulakh/Documents/AA/aA-homeworks/giphy/node_modules/@babel/parser/lib/index.js:5812:21)\n    at _class.parseMaybeConditional (/Users/polinavulakh/Documents/AA/aA-homeworks/giphy/node_modules/@babel/parser/lib/index.js:5784:21)\n    at _class.parseMaybeAssign (/Users/polinavulakh/Documents/AA/aA-homeworks/giphy/node_modules/@babel/parser/lib/index.js:5731:21)\n    at _class.parseExpression (/Users/polinavulakh/Documents/AA/aA-homeworks/giphy/node_modules/@babel/parser/lib/index.js:5684:21)\n    at _class.parseReturnStatement (/Users/polinavulakh/Documents/AA/aA-homeworks/giphy/node_modules/@babel/parser/lib/index.js:7508:28)\n    at _class.parseStatementContent (/Users/polinavulakh/Documents/AA/aA-homeworks/giphy/node_modules/@babel/parser/lib/index.js:7187:21)\n    at _class.parseStatement (/Users/polinavulakh/Documents/AA/aA-homeworks/giphy/node_modules/@babel/parser/lib/index.js:7153:17)\n    at _class.parseBlockOrModuleBlockBody (/Users/polinavulakh/Documents/AA/aA-homeworks/giphy/node_modules/@babel/parser/lib/index.js:7707:23)\n    at _class.parseBlockBody (/Users/polinavulakh/Documents/AA/aA-homeworks/giphy/node_modules/@babel/parser/lib/index.js:7694:10)\n    at _class.parseBlock (/Users/polinavulakh/Documents/AA/aA-homeworks/giphy/node_modules/@babel/parser/lib/index.js:7683:10)\n    at _class.parseFunctionBody (/Users/polinavulakh/Documents/AA/aA-homeworks/giphy/node_modules/@babel/parser/lib/index.js:6933:24)\n    at _class.parseFunctionBodyAndFinish (/Users/polinavulakh/Documents/AA/aA-homeworks/giphy/node_modules/@babel/parser/lib/index.js:6913:10)\n    at _class.parseMethod (/Users/polinavulakh/Documents/AA/aA-homeworks/giphy/node_modules/@babel/parser/lib/index.js:6865:10)\n    at _class.pushClassMethod (/Users/polinavulakh/Documents/AA/aA-homeworks/giphy/node_modules/@babel/parser/lib/index.js:8087:30)\n    at _class.parseClassMemberWithIsStatic (/Users/polinavulakh/Documents/AA/aA-homeworks/giphy/node_modules/@babel/parser/lib/index.js:8006:12)\n    at _class.parseClassMember (/Users/polinavulakh/Documents/AA/aA-homeworks/giphy/node_modules/@babel/parser/lib/index.js:7948:10)\n    at _class.parseClassBody (/Users/polinavulakh/Documents/AA/aA-homeworks/giphy/node_modules/@babel/parser/lib/index.js:7903:12)\n    at _class.parseClass (/Users/polinavulakh/Documents/AA/aA-homeworks/giphy/node_modules/@babel/parser/lib/index.js:7853:10)\n    at _class.parseStatementContent (/Users/polinavulakh/Documents/AA/aA-homeworks/giphy/node_modules/@babel/parser/lib/index.js:7181:21)");
 
 /***/ }),
 
@@ -162,7 +137,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!************************************************!*\
   !*** ./components/giphys_search_container.jsx ***!
   \************************************************/
-/*! no exports provided */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -174,13 +149,29 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    giphys: state.giphys
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    fetchSearchGiphys: function fetchSearchGiphys(searchTerm) {
+      return dispatch(Object(_actions_giphy_actions__WEBPACK_IMPORTED_MODULE_2__["fetchSearchGiphys"])(searchTerm));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_giphys_search__WEBPACK_IMPORTED_MODULE_1__["default"]));
+
 /***/ }),
 
 /***/ "./components/root.jsx":
 /*!*****************************!*\
   !*** ./components/root.jsx ***!
   \*****************************/
-/*! no exports provided */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -192,6 +183,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+var Root = function Root(_ref) {
+  var store = _ref.store;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_1__["Provider"], {
+    store: store
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_giphys_search_container__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Root);
 
 /***/ }),
 
@@ -212,18 +212,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_root__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/root */ "./components/root.jsx");
 /* harmony import */ var url__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! url */ "./node_modules/url/url.js");
 /* harmony import */ var url__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(url__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _util_api_util__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./util/api_util */ "./util/api_util.js");
+/* harmony import */ var _actions_giphy_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./actions/giphy_actions */ "./actions/giphy_actions.js");
 
 
 
 
+ //import { fetchSearchGiphys } from './util/api_util';
 
 
 document.addEventListener('DOMContentLoaded', function () {
   var store = Object(_store_store__WEBPACK_IMPORTED_MODULE_2__["configureStore"])(); //TESTING
-
-  window.getState = store.getState();
-  window.fetchSearchGiphys = _util_api_util__WEBPACK_IMPORTED_MODULE_5__["fetchSearchGiphys"]; //TESTING
+  //window.store = store; 
+  //window.fetchSearchGiphys = fetchSearchGiphys;
+  //window.receiveSearchGiphys = receiveSearchGiphys;
+  //TESTING
 
   var root = document.getElementById('root');
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -25686,17 +25688,21 @@ __webpack_require__.r(__webpack_exports__);
 /*!************************!*\
   !*** ./store/store.js ***!
   \************************/
-/*! no exports provided */
+/*! exports provided: configureStore */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "configureStore", function() { return configureStore; });
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/index.js");
 /* harmony import */ var redux_thunk__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! redux-thunk */ "./node_modules/redux-thunk/es/index.js");
 /* harmony import */ var _reducers_root_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reducers/root_reducer */ "./reducers/root_reducer.js");
 
 
- //export default configureStore;
+
+var configureStore = function configureStore() {
+  return Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers_root_reducer__WEBPACK_IMPORTED_MODULE_2__["default"], Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_1__["default"]));
+};
 
 /***/ }),
 
